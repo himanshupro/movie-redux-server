@@ -3,6 +3,7 @@ import cors from "cors";
 import connectionToDB from "./connection-to-db";
 import dotenv from "dotenv";
 import userRouter from "./Routes/users-route";
+import movieRouter from "./Routes/movie-route"
 
 dotenv.config();
 
@@ -22,6 +23,7 @@ const startServer = () => {
 			});
 
 			app.use("/api/users", userRouter);
+			app.use("/api/movie", movieRouter);
 		})
 		.catch((err: any) => {
 			console.log(err.message);
